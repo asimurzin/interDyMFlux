@@ -169,14 +169,14 @@ def alphaCourantNo( runTime, mesh, alpha1, phi ):
 
 #----------------------------------------------------------------------------------------
 def fun_Urel( mesh, U ):
-# Calculate the relative velocity used to map the relative flux phi
-     Urel = ref.volVectorField( ref.word( "Urel" ), U )
-     if mesh.moving():
-         Urel -= ref.fvc.reconstruct( ref.fvc.meshPhi( U ) )
-         pass
-     # Do any mesh changes
-     mesh.update()
-     pass
+    """ Calculate the relative velocity used to map the relative flux phi """
+    Urel = ref.volVectorField( ref.word( "Urel" ), U )
+    if mesh.moving():
+        Urel -= ref.fvc.reconstruct( ref.fvc.meshPhi( U ) )
+        pass
+    # Do any mesh changes
+    mesh.update()
+    pass
 
 
 #----------------------------------------------------------------------------------------
