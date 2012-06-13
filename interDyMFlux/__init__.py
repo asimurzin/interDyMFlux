@@ -46,6 +46,13 @@ if FOAM_VERSION( ">=", "020100" ):
 
 
 #--------------------------------------------------------------------------------------
+from Foam import FOAM_VERSION
+if FOAM_VERSION( ">=", "020101" ):
+    from interDyMFlux.r2_1_1 import *
+    pass
+
+
+#--------------------------------------------------------------------------------------
 def entry_point():
     try:
        engine = main_standalone
